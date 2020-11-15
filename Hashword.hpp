@@ -5,22 +5,22 @@
 
 class Hashword {
 private:
-    string _masterPass;
-    string _siteName;
-    string _username;
+    std::string _masterPass;
+    std::string _siteName;
+    std::string _username;
 public:
-    Hashword(string masterPass);
+    Hashword(std::string masterPass);
     ~Hashword();
 
-    void set_siteName(string siteName);
-    void set_username(string username);
+    void set_siteName(std::string siteName);
+    void set_username(std::string username);
     
-    string get_siteName();
-    string get_username();
+    std::string get_siteName();
+    std::string get_username();
 
-    string encode();
-    string first_hash();
-    string second_hash();
+    std::size_t encode();
+    // std::string first_hash();
+    // std::string second_hash();
 };
 
 #endif
