@@ -1,6 +1,6 @@
 # Hashword
 
-Hashword is a password tool that aims to remove the need to store passwords.
+Hashword is a command line password tool that aims to generate unique passwords without reading any of your data and remove the need to store generated passwords anywhere.
 
 ## Motivation
 
