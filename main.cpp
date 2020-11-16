@@ -3,8 +3,11 @@
 
 int main(){
     std::string masterPass, site, username;
-    std::cout << "Enter master key" << std::endl;
-    std::cin >> masterPass;
+
+    while (!masterPass.length()){
+        std::cout << "Enter master phrase (DO NOT SHARE THIS WITH ANYONE)" << std::endl;
+        getline(std::cin, masterPass);
+    }
 
     std::cout << "Enter site name" << std::endl;
     std::cin >> site;
