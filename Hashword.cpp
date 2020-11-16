@@ -1,5 +1,6 @@
 #include "Hashword.hpp"
 #include <functional>
+#include <iostream>
 
 Hashword::Hashword(std::string masterPass){
     _masterPass = masterPass;
@@ -24,8 +25,23 @@ std::string Hashword::get_username(){
     return _username;
 }
 
-std::size_t Hashword::encode(){
+void Hashword::hash(){
     std::string combined = _masterPass + _username + _siteName;
     std::size_t hash = std::hash<std::string>{}(combined);
-    return hash;
+    _hash = hash;
+}
+
+std::string Hashword::intToAlphaNums(){
+    hash();
+    std::size_t hash = _hash;
+    std::string s1;
+
+    while (hash > 0){
+        int temp = hash % 1000;
+        temp = (temp % 93) + 33;
+        s1.push_back(temp);
+        hash /= 10;
+    }
+
+    return s1;
 }

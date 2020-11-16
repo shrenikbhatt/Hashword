@@ -8,6 +8,9 @@ private:
     std::string _masterPass;
     std::string _siteName;
     std::string _username;
+    std::size_t _hash;
+
+    void hash();
 public:
     Hashword(std::string masterPass);
     ~Hashword();
@@ -18,9 +21,7 @@ public:
     std::string get_siteName();
     std::string get_username();
 
-    std::size_t encode();
-    // std::string first_hash();
-    // std::string second_hash();
+    std::string intToAlphaNums();
 };
 
 #endif
