@@ -9,16 +9,22 @@ int main(){
         getline(std::cin, masterPass);
     }
 
-    std::cout << "Enter site name" << std::endl;
-    std::cin >> site;
+    
+    while(true){
+        std::cout << "Enter site name (or type exit to quit): ";
+        std::cin >> site;
 
-    std::cout << "Enter username" << std::endl;
-    std::cin >> username;
+        if (site == "exit" || site == "")
+            break;
 
-    Hashword h1 = Hashword(masterPass);
-    h1.set_siteName(site);
-    h1.set_username(username);
+        std::cout << "\nEnter username: ";
+        std::cin >> username;
 
-    std::cout << h1.intToAlphaNums() << std::endl;
+        Hashword h1 = Hashword(masterPass);
+        h1.set_siteName(site);
+        h1.set_username(username);
+
+        std::cout << "\n" << h1.intToAlphaNums() << "\n" << std::endl;
+    }
     return 0;
 }
